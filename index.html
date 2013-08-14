@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Panorama</title>
+	<style>
+	body {
+		margin: 80px 0 0;
+		font-family: 'Segoe UI', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+	}
+	* { margin: 0; padding: 0; }
+
+	h1,h2,h3,h4,h5 {font-weight: lighter; color: white;}
+
+	.exclude {-webkit-transition: all 0.3s ease-in-out;}
+	.exclude:hover {
+		-moz-box-shadow: 0 0 4px 4px rgba(85,85,85,0.3);
+		-webkit-box-shadow: 0 0 4px 4px rgba(85,85,85,0.3);
+		box-shadow: 0 0 4px 4px rgba(85,85,85,0.3);
+		cursor: pointer;
+		-webkit-transition: all 0.3s ease-in-out;
+	}
+
+	/*Search Styles*/
+	#search-container {
+		position:fixed;
+	    top:-800px;
+	    height: 600px;
+	    z-index:100;
+	}
+
+	#search-container ul li {
+		display: inline-block;
+		border: solid white 1px;
+		margin: 0 0 10px 10px;
+		padding: 5px;
+	}
+
+	</style>
+
+	<link rel="stylesheet" href="css/panorama-dev.css">
+	<link rel="stylesheet" href="css/MetroJs.min.css">
+</head>
+<body class="radial-center">
+
+
+<div style="position:absolute; top:10px; right:10px;">
+	<img src="img/search.png" id="search" class="image-button" title="Busqueda" alt="Search" style="width:32px; height: 32px; display: inline-block;">
+	<img src="img/user.png" style="width:48px; height: 48px;">
+	<span style="position:relative; top: -15px; color: white; margin-right:10px;">Administrador</span>
+</div>
+
+<div id="menu-container">
+	<div class="nav-control">
+		<img src="img/back.png" class="nav-button" alt="prev" data-dir="prev">
+		<img src="img/next.png" class="nav-button" alt="next" data-dir="next">
+	</div>
+	<div class="panorama">
+		
+		<ul id="menu_list">
+	<li>
+	<div class="panel" style="width: 500px" data-pwidth="500">
+		<h2>Principal</h2>
+		<div class="tiles blue">
+			<div class="live-tile accent exclude" style="background-color: #00739F">
+				<span class="tile-title">Resumen Anual</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #00739F">
+				<span class="tile-title">Organigrama</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #00739F">
+				<span class="tile-title">Indicadores</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #00739F">
+				<span class="tile-title">Resumen Unidades Adscritas</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #00739F">
+				<span class="tile-title">Usuarios</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #00739F">
+				<span class="tile-title">Presupuesto e Historico</span>
+			</div>
+		</div>
+	</div>
+	</li>
+	<li>
+	<div class="panel" style="width: 500px" data-pwidth="500">
+		<h2>Top Ten</h2>
+		<div class="tiles blue">
+			<div class="live-tile two-wide accent exclude" style="background-color: #137935">
+				<span class="tile-title">Usuarios x Monto</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #137935">
+				<span class="tile-title">Usuarios x Minutos</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #137935">
+				<span class="tile-title">Unidad x Monto</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #137935">
+				<span class="tile-title">Unidad x Minutos</span>
+			</div>
+		</div>
+	</div>
+	</li>
+	<li>
+	<div class="panel" style="width: 500px" data-pwidth="500">
+		<h2>Variacion</h2>
+		<div class="tiles blue">
+			<div class="live-tile two-wide accent exclude" style="background-color: #0A3D1B">
+				<span class="tile-title">Variacion x Usuarios</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #0A3D1B">
+				<span class="tile-title">Variacion x Site</span>
+			</div>
+		</div>
+	</div>
+	</li>
+	<li>
+	<div class="panel" style="width: 500px" data-pwidth="500">
+		<h2>Mis Datos</h2>
+		<div class="tiles blue">
+			<div class="live-tile accent exclude" style="background-color: #0099D2">
+				<span class="tile-title">Resumen Anual</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #0099D2">
+				<span class="tile-title">Llamadas Salientes</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #0099D2">
+				<span class="tile-title">Lista de Contactos</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #0099D2">
+				<span class="tile-title">Requerimientos</span>
+			</div>
+			<div class="live-tile accent exclude" style="background-color: #0099D2">
+				<span class="tile-title">Declarar Llamada</span>
+			</div>
+		</div>
+	</div>
+	</li>
+</ul>
+
+
+	</div>
+</div>
+
+
+
+<!--OVERLAY Div-->
+<div class="overlay radial-center" id="overlay" style="display:none;"></div>
+ <!--Overlay Window-->
+ <div id="dashboard-container">
+ 	<div class="nav-control">
+  		<img src="img/home.png" class="panorama-hide" alt="close">
+		<img src="img/back.png" class="nav-button" alt="prev" data-dir="prev">
+		<img src="img/next.png" class="nav-button" alt="next" data-dir="next">
+	</div> 
+	<div class="panorama">
+	  <ul>
+	  	<li><div class="panel" style="width: 800px; background:#000; opacity: 0.4" data-pwidth="800">
+	  		<img src="img/close.png" class="panel-close" alt="X close">
+	  		
+	  	</div>
+	 </li>
+	  	<li>
+	  		<div class="panel" style="width: 800px; background:#000; opacity: 0.4" data-pwidth="800">
+	  			<img src="img/close.png" class="panel-close" alt="X close">
+	  		</div>
+	  	</li>
+	  </ul>
+	</div>
+ </div>
+
+ <div id="search-container">
+<!-- <div style="position:absolute; top:10px; left:10px;"> -->
+		<div style="margin: 10px 5px 20px;">
+			<button id="search-hide">Ocultar</button>
+	        <input type="text" id="menu-search" placeholder="Search..."/>
+        </div>
+<ul id="menuSearchList"><li>Resumen Anual</li><li>Organigrama</li><li>Indicadores</li><li>Resumen Unidades Adscritas</li><li>Usuarios</li><li>Presupuesto e Historico</li><li>Proveedor</li><li>Sites</li><li>Usuarios x Monto</li><li>Usuarios x Minutos</li><li>Unidad x Monto</li><li>Unidad x Minutos</li><li>Variacion x Usuarios</li><li>Variacion x Site</li><li>Resumen Anual</li><li>Llamadas Salientes</li><li>Lista de Contactos</li><li>Requerimientos</li><li>Declarar Llamada</li></ul>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/quo.js"></script>
+<script type="text/javascript" src="js/MetroJs.min.js"></script>
+
+<script type="text/javascript" src="js/panorama.js"></script>
+<script type="text/javascript" src="js/panorama-dom.js"></script>
+
+<script>
+	(function() {
+
+			//Overlay contenido
+			$('.exclude').on('click', function(){
+				 $('#overlay').fadeIn('fast',function(){
+				            $('#dashboard-container').animate({'top':'10px'},500);
+				        });
+			});
+
+			$('#search').on('click', function(){
+				 $('#overlay').fadeIn('fast',function(){
+				            $('#search-container').animate({'top':'10px'},500);
+				        });
+			});
+
+			$('#search-hide').click(function(){
+		        $(this).parent().parent().animate({'top':'-800px'},500,function(){
+		            $('#overlay').fadeOut('fast');
+		        });
+		    });
+
+			//Filtro de busqueda en el Roster
+            $('#menu-search').on('keyup', function (e) {
+                var query = this.value;
+                $('#menuSearchList li').fadeOut('fast');
+                $('#menuSearchList li')
+                    .filter(function (index) {
+                        var str = $(this).text().toLowerCase();
+                        return str.search(query.toLowerCase()) != -1;
+                    })
+                    .fadeIn('fast');
+            });
+
+
+	})();
+</script>
+
+
+</body>
+</html>

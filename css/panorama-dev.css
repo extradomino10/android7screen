@@ -1,0 +1,117 @@
+.panorama {
+	width: inherit;
+	overflow: scroll;
+	margin-left: 80px;
+}
+
+.panorama ul {
+	width: 10000px;
+	list-style: none;
+}
+
+.panorama li {
+	float: left;
+}
+
+.panorama li:nth-child(even){
+	/*background: #d38;*/
+}
+
+.panorama .panel {
+	height: 400px;
+	margin-right: 40px;
+	background: transparent;
+}
+
+.nav-control { 
+	display: none; 
+	margin-top: 10px;
+	margin-left: 15px;
+	position: absolute;
+	top: 70px;
+	left: 0px;
+}
+
+.nav-control .nav-button,
+.nav-control .panorama-hide,
+.image-button {
+	width: 40px;
+	height: 40px;
+	margin-bottom: 8px;
+	display: block;
+	cursor: pointer;
+	-webkit-transition:opacity .2s ease-in;  
+    -moz-transition:opacity .2s ease-in;  
+    -o-transition:opacity .2s ease-in;  
+    transition:opacity .2s ease-in;  
+}
+
+.nav-control .nav-button:hover,
+.nav-control .panorama-hide:hover, 
+.image-button:hover {
+	filter: alpha(opacity=50);
+  	opacity: 0.5;
+} 
+
+.overlay{
+    background-color: #000;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:100;
+}
+
+#dashboard-container{
+    position:fixed;
+    top:-800px;
+    height: 600px;
+    z-index:101;
+}
+
+#dashboard-container .panel {
+	background:#000; 
+	opacity: 0.4;
+}
+
+#dashboard-container .nav-control {
+	top: 0px;
+}
+
+img.panel-close{
+    width:28px;
+    height:28px;
+    cursor:pointer;
+    float: right;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	clear: both;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;  
+    -o-transition: all 0.5s ease-in-out;  
+    transition: all 0.5s ease-in-out; 
+}
+
+img.panel-close:hover{
+	-webkit-transform:rotateZ(180deg);
+	-moz-transform: rotateZ(180deg);
+	-o-transform: rotateZ(180deg);
+	transform: rotateZ(180deg);
+}
+
+
+.radial-center {
+  /* fallback */
+  background-color: #2F2727;
+  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+  /* Opera cannot do radial gradients yet */
+}
+
+
+
+
+
