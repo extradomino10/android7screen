@@ -1,7 +1,7 @@
 (function(){
 
 	//Inicializacion de Menu panoramico
-	var menuContainer = $('div#menu-container .panorama').css('overflow', 'hidden'),
+	var menuContainer = $('div#menu-container .panorama').css('overflow-y', 'hidden'),
 		panoramaMenu = new Panorama(menuContainer, $('div#menu-container').find('.nav-control'));
 
 
@@ -32,7 +32,7 @@
 			panoramaMenu.setCurrent( 'prev' );
 			panoramaMenu.transition();
 		});*/
-	 	menuContainer.touchwipe({
+	 	/*.touchwipe({
 			     wipeLeft: function() { 
 					panoramaMenu.setCurrent( 'next' );
 					panoramaMenu.transition();
@@ -44,7 +44,7 @@
 			     min_move_x: 10,
 			     min_move_y: 10,
 			     preventDefaultEvents: true
-		});
+		});*/
 
 
 	//Inicializacion de Dashboard panoramico
