@@ -22,7 +22,7 @@
 		});
 
 	var scrollSwipe = 40;
-	$$('div#menu-container .panorama')
+	/*$$('div#menu-container .panorama')
 		.swipeLeft(function(){
 			panoramaMenu.setCurrent( 'next' );
 			panoramaMenu.transition();
@@ -31,8 +31,8 @@
 		.swipeRight(function(){
 			panoramaMenu.setCurrent( 'prev' );
 			panoramaMenu.transition();
-		});
-	 	/*.touchwipe({
+		});*/
+	 	menuContainer.touchwipe({
 			     wipeLeft: function() { 
 					panoramaMenu.setCurrent( 'next' );
 					panoramaMenu.transition();
@@ -44,7 +44,7 @@
 			     min_move_x: 10,
 			     min_move_y: 10,
 			     preventDefaultEvents: true
-		});*/
+		});
 
 
 	//Inicializacion de Dashboard panoramico
