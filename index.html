@@ -158,6 +158,7 @@
 	  <ul>
 	  	<li><div class="panel" style="width: 800px; background:#000; opacity: 0.4" data-pwidth="800">
 	  		<img src="img/close.png" class="panel-close" alt="X close">
+	  		<div style="color:white; padding:10px;width: 760px;" id="result"></div>
 	  		
 	  	</div>
 	 </li>
@@ -221,6 +222,10 @@
                         return str.search(query.toLowerCase()) != -1;
                     })
                     .fadeIn('fast');
+            });
+
+            $.getJSON('http://emcpanax/CPANAXServicesMobile/WinStoreApps.svc/GetMenuIndicators?data=0|00010011887|0001001|0001|8620|M4|8|2012|0|0|1|foo&callback=?', function(data){
+            	$('#result').html(JSON.stringify(data));
             });
 
 
