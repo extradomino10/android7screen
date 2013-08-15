@@ -224,7 +224,7 @@
                     .fadeIn('fast');
             });
 
-            $.getJSON('http://emcpanax/CPANAXServicesMobile/WinStoreApps.svc/GetMenuIndicators?data=0|00010011887|0001001|0001|8620|M4|8|2012|0|0|1|foo&callback=?')
+            $.getJSON('http://192.168.252.105/CPANAXServicesMobile/WinStoreApps.svc/GetMenuIndicators?data=0|00010011887|0001001|0001|8620|M4|8|2012|0|0|1|foo&callback=?')
             	.done(function( json ) {
 				  $('#result').html( "JSON Data: " + json[0].BigVal + '/' +json[0].ID);
 				})
