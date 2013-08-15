@@ -1,7 +1,7 @@
 (function(){
 
 	//Inicializacion de Menu panoramico
-	var menuContainer = $('div#menu-container .panorama').css('overflow', 'hidden'),
+	var menuContainer = $('div#menu-container .panorama').css('overflow-y', 'hidden'),
 		panoramaMenu = new Panorama(menuContainer, $('div#menu-container').find('.nav-control'));
 
 
